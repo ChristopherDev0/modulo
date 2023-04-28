@@ -1,0 +1,4 @@
+.error{
+    @include alert($featured-color, 100, 1.5rem, $white);
+    margin: 2rem 0rem;
+}

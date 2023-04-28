@@ -1,0 +1,60 @@
+/* Media Queries */
+@mixin desktop {
+    @media (min-width: 765px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: 450px) {
+        @content;
+    }
+}
+
+/* buttons*/
+@mixin boton-principal($bgColor, $display, $large, $width, $color) {
+    background-color: $bgColor;
+    display: $display;
+    text-align: center;
+    color: $color;
+    font-size: 1.5rem;
+    padding: $large $width;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: darken($bgColor, 5);
+    }
+}
+@mixin boton-secundary($display, $large, $width, $color, $colorborder) {
+    background-color: transparent;
+    display: $display;
+    text-align: center;
+    color: $color;
+    font-size: 1.5rem;
+    padding: $large $width;
+    border-radius: 5px;
+    border: 2px solid $colorborder;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: lighten($colorborder, 5);
+    }
+}
+
+@mixin alert($bgColor, $width, $large, $color, ){
+    background-color: $bgColor;
+    display: block;
+    width: $width;
+    text-align: center;
+    padding:  $large 5rem;
+    color: $color;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 5px solid darken($bgColor, 5);
+    font-weight: bold;
+    font-size: 1.5rem;
+}

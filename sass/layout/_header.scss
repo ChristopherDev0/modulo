@@ -1,0 +1,176 @@
+header{
+    min-height: 87rem;
+    position: relative;
+    @include desktop{
+        min-height: 60rem;
+    }
+    .permanent{
+        background-color: rgba(255, 255, 255, 0.5);
+       /*  background-color: transparent; */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+        z-index: 1;
+        box-shadow: 0 0.1rem 1.1rem #000000;
+        /* backdrop-filter: blur(1.5px); */
+        backdrop-filter: blur(4px);
+    }
+    .nav-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 1.7rem 0rem;
+        @include desktop{
+            flex-direction: row;
+        }
+        .menu-responsivo{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            img{
+                width: 8rem;
+            }
+            .button-responsive{
+                display: block;
+                background: $principalcolor;
+                border: none;
+                border-radius: 5px;
+                padding: 0.5rem;
+                cursor: pointer;
+                img{
+                    width: 3rem;
+                }
+                @include desktop {
+                    display: none;
+                }
+            }
+        }
+        
+        nav{
+            height: 0;
+            overflow: hidden;
+            transition: all .5s ease;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            @include desktop {
+                width: auto;
+                height: 0;
+                overflow: visible;
+            }
+            .links{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                width: 100%;
+                gap: 2rem;
+                @include desktop{
+                    flex-direction: row;
+                    width: auto;
+                    gap: 3rem;
+                }
+                a{
+                    @include boton-secundary(inline-block, .7rem, 3rem,$black, $featured-color);
+                    width: 100%;
+                    @include desktop{
+                        width: auto;
+                    }
+                    &:hover{
+                        color: $white;
+                    }
+                }
+                .button.selected {
+                    background-color: $featured-color;
+                    color: white;
+                  }
+            }
+            
+        }
+        nav.active{
+            height: 25rem;
+            width: 70%;
+        }
+
+    }
+
+    .contents-header{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: left;
+        gap: 4rem;
+        padding-top: 13rem;
+        @include desktop {
+            flex-direction: row;
+            gap: 4rem;
+        }
+
+        img{
+            max-width: 45rem;
+        }
+    }
+
+    .content-header{
+        h1{
+            font-size: 4rem;
+            font-weight: bold;
+            line-height: 1;
+            @include desktop {
+                font-size: 5rem;
+            }
+        }
+        p{
+            font-size: 1.7rem;
+            margin: 2rem 0rem 3rem;
+            @include desktop {
+                font-size: 2rem;
+            }
+        }
+        .button-header{
+            display: flex;
+            align-items:start;
+            flex-direction: column;
+            justify-content: left;
+            gap: 1.5rem;
+            @include desktop {
+                flex-direction: row;
+                gap: 2rem;
+            }
+            a{
+                @include boton-secundary(inline-block, 1rem, 2rem, $black, $grey );
+                width: 100%;
+                @include desktop {
+                    width: auto;
+                }
+            }
+            a.principal{
+                width: 100%;
+                @include boton-principal($featured-color, inline-block, 1.1rem, 6rem, $white);
+                box-shadow: 0 0 15px $featured-color;
+                border: none;
+                @include desktop {
+                    width: auto;
+                }
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+    }
+
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+}
