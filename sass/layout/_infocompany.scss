@@ -2,7 +2,6 @@
     background-color: $secundary-color;
     position: relative;
     z-index: -1;
-    box-shadow: 0 0.3rem 3rem #3e3752;
 }
 .content-company{
     padding: 8rem 0rem 10rem;
@@ -77,4 +76,9 @@
             }
         }
     }
+}
+.wave-info{
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }

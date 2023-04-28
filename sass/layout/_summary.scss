@@ -150,3 +150,10 @@
     }
     
 }
+
+.copyBoton{
+
+        margin-bottom: 2rem;
+        @include boton-secundary(inline-block, .7rem, 3rem,$black, $yellow);
+    
+}
